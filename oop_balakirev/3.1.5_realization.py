@@ -63,7 +63,7 @@ class Module:
 
     def remove_lesson(self, indx):
         """Удаление из списка lessons урока по индексу indx."""
-        if len(self.lessons) <= indx:
+        if len(self.lessons) < indx:
             raise IndexError('Веденный индекс больше чем элементов в списке.')
         self.lessons.pop(indx)
 
@@ -96,7 +96,7 @@ class Course:
 
     def remove_module(self, indx):
         """Удаление из списка modules модуля по индексу indx."""
-        if len(self.modules) <= indx:
+        if len(self.modules) < indx:
             raise IndexError('Веденный индекс больше чем элементов в списке.')
         self.modules.pop(indx)
 
