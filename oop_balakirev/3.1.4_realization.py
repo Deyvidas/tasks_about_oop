@@ -1,5 +1,5 @@
 class Shop:
-    __args = {'name': str, 'goods': list}
+    __attrs = {'name': str, 'goods': list}
 
     def __init__(self, name) -> None:
         self.name = name
@@ -10,7 +10,7 @@ class Shop:
         """Функция возвращает True если введенный тип данных соответствует типу
         данных хранящихся в аргументе, иначе False
         """
-        correct_type = cls.__args[key]
+        correct_type = cls.__attrs[key]
         return isinstance(value, correct_type)
 
     def add_product(self, product) -> None:
@@ -23,7 +23,7 @@ class Shop:
             self.goods.remove(product)
 
     def __setattr__(self, key, value):
-        if key not in self.__args:
+        if key not in self.__attrs:
             raise AttributeError(f'Аттрибута {key} не существует.')
         if not self.__check_input(key, value):
             raise TypeError('Неверный тип присваиваемых данных.')
