@@ -1,4 +1,4 @@
-class Correct_input:
+class CorrectInput:
     attrs = {
         '__x': (int, float),
         '__y': (int, float),
@@ -31,9 +31,9 @@ class Correct_input:
 
 
 class Circle:
-    x = Correct_input()
-    y = Correct_input()
-    radius = Correct_input()
+    x = CorrectInput()
+    y = CorrectInput()
+    radius = CorrectInput()
 
     def __init__(self, x, y, radius):
         self.x = x
